@@ -25,7 +25,7 @@
 
  http://www.imbs-luebeck.de
  #-------------------------------------------------------------------------------*/
-
+#include <ros/ros.h>
 #include <iostream>
 #include <fstream>
 #include <stdexcept>
@@ -39,7 +39,7 @@
 #include "ForestProbability.h"
 
 int main(int argc, char **argv) {
-
+  ROS_INFO("ROS import successful");
   ArgumentHandler arg_handler(argc, argv);
   Forest* forest = 0;
   try {
@@ -99,6 +99,28 @@ int main(int argc, char **argv) {
     }
     forest->writeOutput();
     *verbose_out << "Finished Ranger." << std::endl;
+
+
+
+
+
+/*
+  std::string direct_input;
+  direct_input = "../src/test_2.dat";
+
+  forest->initCpp(arg_handler.depvarname, arg_handler.memmode, direct_input, arg_handler.mtry,
+      arg_handler.outprefix, arg_handler.ntree, verbose_out, arg_handler.seed, arg_handler.nthreads,
+      arg_handler.predict, arg_handler.impmeasure, arg_handler.targetpartitionsize, arg_handler.splitweights,
+      arg_handler.alwayssplitvars, arg_handler.statusvarname, arg_handler.replace, arg_handler.catvars,
+      arg_handler.savemem, arg_handler.splitrule, arg_handler.caseweights, arg_handler.predall, arg_handler.fraction,
+      arg_handler.alpha, arg_handler.minprop, arg_handler.holdout, arg_handler.predictiontype,
+      arg_handler.randomsplits);
+
+
+  forest->run(true);
+  forest->writeOutput();
+  *verbose_out << "Finished Ranger Again." << std::endl;  
+*/  
 
     delete forest;
   } catch (std::exception& e) {

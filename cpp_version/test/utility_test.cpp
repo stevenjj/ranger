@@ -86,7 +86,7 @@ TEST(equalSplit, moreParts3) {
 }
 
 TEST(readWrite1D, int1) {
-  std::ofstream outfile = std::ofstream();
+  std::ofstream outfile; //= std::ofstream();
   outfile.open("testfile1d", std::ios::binary);
   if (!outfile.good()) {
     throw std::runtime_error("Could not write to output file: ");
@@ -95,7 +95,7 @@ TEST(readWrite1D, int1) {
   saveVector1D(expect, outfile);
   outfile.close();
 
-  std::ifstream infile = std::ifstream();
+  std::ifstream infile;// = std::ifstream();
   infile.open("testfile1d", std::ios::binary);
   if (!infile.good()) {
     throw std::runtime_error("Could not read from input file: ");
@@ -108,7 +108,7 @@ TEST(readWrite1D, int1) {
 }
 
 TEST(readWrite1D, double1) {
-  std::ofstream outfile = std::ofstream();
+  std::ofstream outfile;// = std::ofstream();
   outfile.open("testfile1d", std::ios::binary);
   if (!outfile.good()) {
     throw std::runtime_error("Could not write to output file: ");
@@ -117,7 +117,7 @@ TEST(readWrite1D, double1) {
   saveVector1D(expect, outfile);
   outfile.close();
 
-  std::ifstream infile = std::ifstream();
+  std::ifstream infile;// = std::ifstream();
   infile.open("testfile1d", std::ios::binary);
   if (!infile.good()) {
     throw std::runtime_error("Could not read from input file: ");
@@ -130,7 +130,7 @@ TEST(readWrite1D, double1) {
 }
 
 TEST(readWrite2D, int1) {
-  std::ofstream outfile = std::ofstream();
+  std::ofstream outfile;// = std::ofstream();
   outfile.open("testfile2d", std::ios::binary);
   if (!outfile.good()) {
     throw std::runtime_error("Could not write to output file: ");
@@ -146,7 +146,7 @@ TEST(readWrite2D, int1) {
   saveVector2D(expect, outfile);
   outfile.close();
 
-  std::ifstream infile = std::ifstream();
+  std::ifstream infile;// = std::ifstream();
   infile.open("testfile2d", std::ios::binary);
   if (!infile.good()) {
     throw std::runtime_error("Could not read from input file: ");
@@ -159,7 +159,7 @@ TEST(readWrite2D, int1) {
 }
 
 TEST(readWrite2D, double1) {
-  std::ofstream outfile = std::ofstream();
+  std::ofstream outfile;// = std::ofstream();
   outfile.open("testfile2d", std::ios::binary);
   if (!outfile.good()) {
     throw std::runtime_error("Could not write to output file: ");
@@ -175,7 +175,7 @@ TEST(readWrite2D, double1) {
   saveVector2D(expect, outfile);
   outfile.close();
 
-  std::ifstream infile = std::ifstream();
+  std::ifstream infile;// = std::ifstream();
   infile.open("testfile2d", std::ios::binary);
   if (!infile.good()) {
     throw std::runtime_error("Could not read from input file: ");
